@@ -54,31 +54,6 @@ const oldSchoolHipHopPlaylist = new Playlist(
     The function should return true if there is a song performed by the specified artist, and false otherwise.
   */
 
-//iterate over every playlist within playlist array
-// for every song, check to see if the artistName arg corresponds to a song within the song array.
-//playlist.playlists.forEach(playlist => {
-
-// //})
-// playlists: [playlist1, playlist2, playlist3]
-// playlist1: [playlist4, playlist5]
-
-// queue = [playlist.playlists]
-
-// queue = [1990s, 2020s]
-
-//while(queue.length > 0) {
-//   let current = queue.shift() // 1980s
-//   let songs = []
-//
-//   songs.push(current.songs)
-//
-//   if(current.playlists) {
-// queue.push(current.playlists)
-// }
-//
-// }
-
-// [oldSchoolHipHopPlaylist.playlists]
 
 function playlistContainsArtist(playlist) {
   let playlistQueue = [...playlist.playlists];
@@ -91,13 +66,6 @@ function playlistContainsArtist(playlist) {
     playlistQueue.push(...currentPlaylist.playlists);
   }
 
-  // for(let i = 0; i < allSongs.length; i++) {
-  //   if(allSongs[i].artist === artistName) {
-  //     return true
-  //   }
-  // }
-
-  // return false
 
   let sum = 0;
   for (let i = 0; i < allSongs.length; i++) {

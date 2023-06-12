@@ -7,7 +7,7 @@
   //the key is the last value of the longest subArray
   //need to replace the value if subarray is greater than the current count in the object
 
-
+//find longest chronologically increasing subarray -- sliding window
 
 
   const findSubarray = (array) => {
@@ -29,7 +29,7 @@
           lengths[currentElement] = potentialLongerSequence
         }
       }
-
+      console.log(lengths)
     }
     return Math.max(...Object.values(lengths))
   }
