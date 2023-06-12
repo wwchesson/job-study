@@ -2,6 +2,15 @@
 
 import { MaxPriorityQueue } from "@datastructures-js/priority-queue"
 
+class Tweet {
+    constructor(userId, tweetId, tweetCount) {
+        this.userId = userId
+        this.tweetId = tweetId
+        //serves as timestamp
+        this.tweetCount = tweetCount
+    }
+}
+
 //we want the list of people that the user follows
 class Twitter {
     constructor() {
@@ -18,7 +27,9 @@ class Twitter {
     //what happens when post tweet?
     //need to store all tweets somewhere - priority queue
     postTweet(userId, tweetId) {
+        //line 31 refers to global tweet count
         const tweet = new Tweet(userId, tweetId, this.tweetCount++)
+        
         //accessing tweetCount from the Tweet instance, not the global tweetCount
         this.tweets.enqueue(tweet, tweet.tweetCount)
     }
@@ -74,11 +85,3 @@ class Twitter {
 }
 
 
-class Tweet {
-    constructor(userId, tweetId, tweetCount) {
-        this.userId = userId
-        this.tweetId = tweetId
-        //serves as timestamp
-        this.tweetCount = tweetCount
-    }
-}
