@@ -13,8 +13,10 @@ def calculate(s):
     stack = []
     i=0
 
-    while i < len(s):
-        char = s[i]
+    while i <= len(s):
+        if not i == len(s): char = s[i]
+        else: char = "$"
+
         if char == " ": continue
 
         #if char is number, then add to num
@@ -45,7 +47,6 @@ def calculate(s):
             num = ""
 
         i+=1
-        print("i", i)
 
     print("stack before while", stack)
     #at the end of the loop will have result of any multiplication or division in the stack
@@ -59,4 +60,4 @@ def calculate(s):
 
 
 
-print(calculate("3+2*2"))
+print(calculate("7*8+2"))
